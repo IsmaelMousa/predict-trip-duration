@@ -19,10 +19,9 @@
 Practice inferential statistics using python,
 We would like to predict trip duration from a location to another using a taxi.
 
-This project is a training and educational project,
-as the project was presented in the Data Science 2 course at An-Najah National University.
 
-
+The idea for this project was proposed by [Dr.Ayser Armiti](https://www.linkedin.com/in/ayserarmiti?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app) 
+in the Data Science 2 course at An-Najah National University.
 
 ## Technologies
 * Python 3.11.2
@@ -82,7 +81,7 @@ The new data frame is returned from the function.
 
 ### Forth Function
 
-This Function that read the data file and calls the three functions to finally generate the data frame that is called predictions.
+This Function reads the data file and calls the three functions to finally generate the data frame that is called predictions.
 
 
 ## Data Set used from [NYC OpenData](https://opendata.cityofnewyork.us) Thank You!
