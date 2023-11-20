@@ -1,0 +1,31 @@
+[flake8]
+extend-ignore =
+    # H101: Use to-do
+    H101,
+    # H202: assertRaises Exception too broad
+    H202,
+    # H301: one import per line
+    H301,
+    # H306: imports not in alphabetical order (time, os)
+    H306,
+    # H401: docstring should not start with a space
+    H401,
+    # H403: multi line docstrings should end on a new line
+    H403,
+    # H404: multi line docstring should start without a leading new line
+    H404,
+    # H405: multi line docstring summary not separated with an empty line
+    H405,
+    # H501: Do not use self.__dict__ for string formatting
+    H501,
+    # W293: blank line contains whitespace
+    W293
+exclude =
+    .venv,
+    .git,
+    __pycache__,
+    docs/source/conf.py,
+    old,
+    build,
+    dist
+max-line-length = 91
