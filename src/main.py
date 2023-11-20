@@ -4,7 +4,8 @@ import pandas as pd
 
 def computing_the_trip_duration(data_frame: pd.DataFrame) -> pd.DataFrame:
     """
-    Computing the trip duration by using the difference between: pickup_datetime and dropoff_datetime
+    Computing the trip duration by using the difference between:
+    pickup_datetime and dropoff_datetime
     and adding the computation to a new column, Then adding this new column the data frame.
     finally the result data frame is returned from the function.
 
@@ -17,7 +18,8 @@ def computing_the_trip_duration(data_frame: pd.DataFrame) -> pd.DataFrame:
 def adding_hours_of_day_and_days_of_week(data_frame: pd.DataFrame) -> pd.DataFrame:
     """
     Adding two columns to the original data frame the first column is:
-    the hour of the day, and the second column is: the day of the week, from the field pickup_datetime.
+    the hour of the day, and the second column is: the day of the week,
+    from the field pickup_datetime.
     finally The new data frame is returned from the function.
 
     :param data_frame: original data frame.
