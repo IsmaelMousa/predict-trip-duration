@@ -1,4 +1,3 @@
-import requests
 import pandas as pd
 
 
@@ -12,7 +11,16 @@ def computing_the_trip_duration(data_frame: pd.DataFrame) -> pd.DataFrame:
     :param data_frame: original data frame.
     :return: data frame with new column.
     """
-    pass
+
+    pick_up_time = data_frame['pickup_datetime'] = pd.to_datetime(data_frame['pickup_datetime'])
+
+    drop_of_time = data_frame['dropoff_datetime'] = pd.to_datetime(data_frame['dropoff_datetime'])
+
+    trip_duration = ((drop_of_time - pick_up_time).dt.total_seconds() / 60).round(2)
+
+    data_frame.insert(4, 'Trip Duration', trip_duration)
+
+    return data_frame
 
 
 def adding_hours_of_day_and_days_of_week(data_frame: pd.DataFrame) -> pd.DataFrame:
@@ -46,8 +54,8 @@ def computes_predictions(data_frame: pd.DataFrame) -> pd.DataFrame:
     /Day of the week / Hour of the day.
     the new data frame is returned from the function.
 
-    :param data_frame: Original Data Frame
-    :return: New Data Frame
+    :param data_frame: original data frame.
+    :return: new data frame called predictions.
     """
     pass
 
@@ -69,12 +77,8 @@ def get_predictions(data_url: str) -> pd.DataFrame:
 
 
 if __name__ == '__main__':
-    url = 'https://data.cityofnewyork.us/resource/4p5c-cbgn.json'
+    path = 'sample.csv'
 
-    response = requests.get(url=url)
+    original_data_frame = pd.read_csv(path)
 
-    data = response.json()
-
-    df = pd.DataFrame(data)
-
-    print(df.shape)
+    new_data_frame_with_the_trip_duration = computing_the_trip_duration(original_data_frame)
