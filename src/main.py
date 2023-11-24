@@ -12,11 +12,11 @@ def computing_the_trip_duration(original_df: pd.DataFrame) -> pd.DataFrame:
     :return: data frame with new column.
     """
 
-    original_df['pickup_datetime'] = pd.to_datetime(original_df['pickup_datetime'])
-    pick_up_time = original_df['pickup_datetime']
+    original_df.pickup_datetime = pd.to_datetime(original_df.pickup_datetime)
+    pick_up_time = original_df.pickup_datetime
 
-    original_df['dropoff_datetime'] = pd.to_datetime(original_df['dropoff_datetime'])
-    drop_off_time = original_df['dropoff_datetime']
+    original_df.dropoff_datetime = pd.to_datetime(original_df.dropoff_datetime)
+    drop_off_time = original_df.dropoff_datetime
 
     trip_duration = ((drop_off_time - pick_up_time).dt.total_seconds() / 60).round(2)
 
@@ -36,10 +36,10 @@ def adding_hour_of_day_and_day_of_week(original_df: pd.DataFrame) -> pd.DataFram
     :return: data frame with new two columns.
     """
 
-    original_df['pickup_datetime'] = pd.to_datetime(original_df['pickup_datetime'])
+    original_df.pickup_datetime = pd.to_datetime(original_df.pickup_datetime)
 
-    hour_of_day = original_df['pickup_datetime'].dt.hour
-    day_of_week = original_df['pickup_datetime'].dt.day_of_week
+    hour_of_day = original_df.pickup_datetime.dt.hour
+    day_of_week = original_df.pickup_datetime.dt.day_name()
 
     original_df.insert(loc=5, column='hour_of_day', value=hour_of_day)
     original_df.insert(loc=6, column='day_of_week', value=day_of_week)
@@ -58,11 +58,11 @@ def computes_predictions(original_df: pd.DataFrame) -> pd.DataFrame:
 
     and has two columns:
 
-    - The mean trip duration.
+    - The mean of trip duration.
     - The margin of error (using 95% confidence interval).
 
     the mean is computed for all trip durations for the same PULocationID / DOLocationID
-    /Day of the week / Hour of the day.
+    /day of the week /hour of the day.
     the new data frame is returned from the function.
 
     :param original_df: original data frame.
@@ -97,3 +97,15 @@ if __name__ == '__main__':
 
     # 2nd
     new_df_with_hours_of_day_and_days_of_week = adding_hour_of_day_and_day_of_week(original_df=df)
+
+    # 3rd TODO: refactor it when it done
+    copy_df = df.copy()
+    copy_df.drop(
+        columns=['hvfhs_license_num', 'dispatching_base_num', 'pickup_datetime', 'dropoff_datetime', 'sr_flag'],
+        inplace=True)
+    copy_df.set_index(['pulocationid', 'dolocationid', 'hour_of_day', 'day_of_week'], inplace=True)
+    mean = copy_df.groupby(['pulocationid', 'dolocationid', 'hour_of_day', 'day_of_week']).trip_duration.mean(
+        numeric_only=True)
+    m = pd.DataFrame(mean)
+    m.rename(columns={'trip_duration': 'mean_trip_duration'}, inplace=True)
+    print(m.index.names, m.columns.values)
