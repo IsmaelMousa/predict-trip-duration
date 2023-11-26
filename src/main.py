@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-def computing_the_trip_duration(original_df: pd.DataFrame) -> pd.DataFrame:
+def compute_trip_duration(original_df: pd.DataFrame) -> pd.DataFrame:
     """
     Computing the trip duration by using the difference between:
     pickup_datetime and dropoff_datetime
@@ -17,17 +17,14 @@ def computing_the_trip_duration(original_df: pd.DataFrame) -> pd.DataFrame:
     original_df.pickup_datetime = pd.to_datetime(original_df.pickup_datetime)
     original_df.dropoff_datetime = pd.to_datetime(original_df.dropoff_datetime)
 
-    pick_up_time = original_df.pickup_datetime
-    drop_off_time = original_df.dropoff_datetime
-
-    trip_duration = ((drop_off_time - pick_up_time).dt.total_seconds() / 60).round(2)
+    trip_duration = ((original_df.dropoff_datetime - original_df.pickup_datetime).dt.total_seconds() / 60).round(2)
 
     original_df.insert(loc=4, column='trip_duration', value=trip_duration)
 
     return original_df
 
 
-def adding_hour_of_day_and_day_of_week(original_df: pd.DataFrame) -> pd.DataFrame:
+def add_hour_of_day_and_day_of_week_columns(original_df: pd.DataFrame) -> pd.DataFrame:
     """
     Adding two columns to the original data frame the first column is:
     the hour of day, and the second column is: the day of week,
@@ -40,10 +37,8 @@ def adding_hour_of_day_and_day_of_week(original_df: pd.DataFrame) -> pd.DataFram
 
     original_df.pickup_datetime = pd.to_datetime(original_df.pickup_datetime)
 
-    pickup_datetime = original_df.pickup_datetime
-
-    hour_of_day = pickup_datetime.dt.hour
-    day_of_week = pickup_datetime.dt.day_name()
+    hour_of_day = original_df.pickup_datetime.dt.hour
+    day_of_week = original_df.pickup_datetime.dt.day_name()
 
     original_df.insert(loc=5, column='hour_of_day', value=hour_of_day)
     original_df.insert(loc=6, column='day_of_week', value=day_of_week)
@@ -51,22 +46,22 @@ def adding_hour_of_day_and_day_of_week(original_df: pd.DataFrame) -> pd.DataFram
     return original_df
 
 
-def computes_predictions(original_df: pd.DataFrame) -> pd.DataFrame:
+def compute_predictions(original_df: pd.DataFrame) -> pd.DataFrame:
     """
-    Computes a new data frame called predictions where the index is:
+    Computing a new data frame called predictions where the index is:
 
-    - PULocationID.
-    - DOLocationID.
-    - day of the week.
-    - hour of the day.
+    - pulocationid
+    - dolocationid
+    - day of week
+    - hour of day
 
     and has two columns:
 
-    - The mean of trip duration.
-    - The margin of error (using 95% confidence interval).
+    - The mean of trip duration
+    - The margin of error (using 95% confidence interval)
 
-    the mean is computed for all trip durations for the same PULocationID / DOLocationID
-    /day of the week /hour of the day.
+    the mean is computed for all trip durations for the same pulocationid / dolocationid
+    /day of week /hour of day.
     the new data frame is returned from the function.
 
     :param original_df: original data frame.
@@ -98,7 +93,7 @@ def computes_predictions(original_df: pd.DataFrame) -> pd.DataFrame:
 
 def get_predictions(path: str) -> pd.DataFrame:
     """
-    Reads data file and calling three functions:
+    Reading the data file and calling three functions:
 
     - computing the trip duration function
     - adding the hour of day and the day of week function
@@ -111,14 +106,23 @@ def get_predictions(path: str) -> pd.DataFrame:
     """
     original_df = pd.read_csv(filepath_or_buffer=path)
 
-    computing_the_trip_duration(original_df=original_df)
+    compute_trip_duration(original_df=original_df)
 
-    adding_hour_of_day_and_day_of_week(original_df=original_df)
+    add_hour_of_day_and_day_of_week_columns(original_df=original_df)
 
-    predictions = computes_predictions(original_df=original_df)
+    predictions = compute_predictions(original_df=original_df)
 
     return predictions
 
 
 if __name__ == '__main__':
-    pass
+    df = pd.read_csv('sample.csv')
+
+    a = compute_trip_duration(original_df=df)
+    print(a.head(2).to_string(index=False), '\n')
+
+    b = add_hour_of_day_and_day_of_week_columns(original_df=df)
+    print(b.head(2).to_string(index=False), '\n')
+
+    c = compute_predictions(original_df=df)
+    print(c.head(2).to_string(index=False), '\n')
