@@ -50,22 +50,25 @@ make run-ipynb
 # or by using code editor (e.g., Pycharm, VS Code, etc.).
 ```
 
-## **Description:**
+## Description:
 We need to write four functions to do some operation on a data set
 to finally generate a dataframe that is called predictions.
 
 Data Set that we used: [2019 High Volume FHV Trip Records](https://data.cityofnewyork.us/Transportation/2019-High-Volume-FHV-Trip-Records/4p5c-cbgn/data)
 
-### **1st Function**
+### 1st Function
 
-This Function takes a dataframe and computes the trip duration using the difference between pickup_datetime and dropoff_datetime.
+This function takes a dataframe and computes the trip duration by using the difference between
+`pickup_datetime` and `dropoff_datetime`, to create a new column called: `trip_duration`.
+
 The new column is added to the data frame and the result data frame is returned from the function.
-### **2nd Function**
+### 2nd Function
 
-This Function takes a data frame and adds to it the hour of the day and the day of the week from the field pickup_datetime.
+This function takes a dataframe and adding to it the `hour of day` and the `day of week` from the field `pickup_datetime`.
+
 The new data frame is returned from the function.
 
-### **3rd Function**
+### 3rd Function
 
 This Function computes a new data frame called predictions where the index is:
 
@@ -82,10 +85,14 @@ And has two columns:
 The mean is computed for all trip durations for the same: **pulocationid** /**dolocationid** /**hour of day** /**day of week**.
 The new data frame is returned from the function.
 
-### **4th Function**
+### 4th Function
+This function reads the **data file path** and calling three functions:
 
-This Function reads the data file and calls the three functions to finally generate the data frame that is called predictions.
+- `compute trip duration`
+- `add the hour of day and the day of week columns`
+- `compute predictions`
 
+To finally generate a data frame  that is called `predictions`.
 
-## **Data Set used from** [NYC OpenData,](https://opendata.cityofnewyork.us) **Thank You!**
+## Data Set used from [NYC OpenData](https://opendata.cityofnewyork.us), Thank You!
 
