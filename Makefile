@@ -1,3 +1,7 @@
+download:
+	@echo "downloading data..."
+	@echo curl https://data.cityofnewyork.us/api/views/4p5c-cbgn/rows.csv?accessType=DOWNLOAD --output data.csv
+
 install | i:
 	@echo "installing dependencies..."
 	@poetry install
@@ -10,10 +14,6 @@ test:
 	@echo "running test cases..."
 	@nose2 --config=nose2.cfg -v -F
 
-run-py:
-	@echo "main.py is running..."
+run:
+	@echo "program is running..."
 	@python3 ./src/main.py
-
-run-ipynb:
-	@echo "main.ipynb is running..."
-	@jupyter-notebook ./src/main.ipynb
