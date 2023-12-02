@@ -35,9 +35,9 @@ Install required dependencies
 ```Bash
 make install
 ```
-run `main.py` by using code editor (e.g., PyCharm, Visual Studio Code, etc.).
+Run `main.py` by using code editor (e.g., PyCharm, Visual Studio Code, etc.).
 
-or run `main.ipynb` by using code editor (e.g., DataSpell, Visual Studio Code, etc.).
+Run `main.ipynb` by using code editor (e.g., DataSpell, Visual Studio Code, etc.).
 
 ## Description
 We need to write four functions to do some operation on a data set
