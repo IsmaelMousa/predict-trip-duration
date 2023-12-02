@@ -67,10 +67,10 @@ def compute_predictions(original_df: pd.DataFrame) -> pd.DataFrame:
     :return: new data frame called predictions
     """
 
-    predictions = original_df.groupby(by=['PULocationID', 'DOLocationID', 'hour_of_day', 'day_of_week']).agg(
-        mean_trip_duration=('trip_duration', 'mean'), margin_of_error=('trip_duration', 'sem'))
+    predictions = (original_df.groupby(by=['PULocationID', 'DOLocationID', 'hour_of_day', 'day_of_week'])
+                   .agg(mean_trip_duration=('trip_duration', 'mean'), margin_of_error=('trip_duration', 'sem')))
 
-    predictions.margin_of_error = (predictions.margin_of_error * norm.ppf(q=0.95)).round(2)
+    predictions.margin_of_error = (predictions.margin_of_error * norm.ppf(q=0.975)).round(2)
 
     return predictions
 
@@ -102,7 +102,4 @@ def get_predictions(file_path: str) -> pd.DataFrame:
 
 if __name__ == '__main__':
     file_path = '../data/sample.csv'
-
-    predictions = get_predictions(file_path=file_path)
-
-    print(predictions.head().to_string())
+    df = pd.read_csv(file_path)
