@@ -36,6 +36,7 @@ Install required dependencies
 make install
 ```
 run `main.py` by using code editor (e.g., PyCharm, Visual Studio Code, etc.).
+
 or run `main.ipynb` by using code editor (e.g., DataSpell, Visual Studio Code, etc.).
 
 ## Description
