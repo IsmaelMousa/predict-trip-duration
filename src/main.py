@@ -5,7 +5,7 @@ from scipy.stats import norm
 def compute_and_add_trip_duration(original_df: pd.DataFrame) -> pd.DataFrame:
     """
     Computing the trip duration by using the difference between:
-    pickup_datetime and dropoff_datetime
+    pickup_datetime and dropoff_datetime (in Minutes).
     and the computed trip duration will be added as a new column called: trip_duration,
     and this new column will be added to the original data frame.
 
@@ -27,9 +27,9 @@ def compute_and_add_trip_duration(original_df: pd.DataFrame) -> pd.DataFrame:
 
 def add_hour_of_day_and_day_of_week(original_df: pd.DataFrame) -> pd.DataFrame:
     """
-    Adding two columns to the original data frame where the first column is:
-    hour of day, and the second column is: day of week,
-    from the field pickup_datetime.
+    Adding two columns to the original data frame where the first column:
+    hour of day, and the second column: day of week from pickup_datetime field.
+
     finally the new data frame is returned from the function.
 
     :param original_df: original data frame
@@ -54,24 +54,23 @@ def compute_predictions(original_df: pd.DataFrame) -> pd.DataFrame:
     - hour of day
     - day of week
 
-
     and has two columns:
 
     - mean trip duration
-    - margin of error (using 95% confidence interval)
+    - margin of error
 
-    the mean is computed for all trip durations for the same PULocationID / DOLocationID
-    /day of week /hour of day.
+    the mean is computed for all trip durations for the same:
+    PULocationID / DOLocationID /day of week /hour of day.
     the new data frame is returned from the function.
 
     :param original_df: original data frame
     :return: new data frame called predictions
     """
 
-    predictions = original_df.groupby(by=['pulocationid', 'dolocationid', 'hour_of_day', 'day_of_week']).agg(
+    predictions = original_df.groupby(by=['PULocationID', 'DOLocationID', 'hour_of_day', 'day_of_week']).agg(
         mean_trip_duration=('trip_duration', 'mean'), margin_of_error=('trip_duration', 'sem'))
 
-    predictions.margin_of_error *= norm.ppf(0.95)
+    predictions.margin_of_error = (predictions.margin_of_error * norm.ppf(q=0.95)).round(2)
 
     return predictions
 
@@ -84,7 +83,7 @@ def get_predictions(file_path: str) -> pd.DataFrame:
     - add hour of day and day of week
     - compute predictions
 
-    to finally generate a data frame called predictions.
+    finally to generate a new data frame called predictions.
 
     :param file_path: dataset file path
     :return: generated data frame called predictions
@@ -102,6 +101,8 @@ def get_predictions(file_path: str) -> pd.DataFrame:
 
 
 if __name__ == '__main__':
-    path = 'sample.csv'
+    file_path = '../data/sample.csv'
 
-    predictions_df = get_predictions(file_path=path)
+    predictions = get_predictions(file_path=file_path)
+
+    print(predictions.head().to_string())
