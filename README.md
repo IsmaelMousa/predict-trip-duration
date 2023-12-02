@@ -27,16 +27,16 @@ in the Data Science 2 course at An-Najah National University.
 - Poetry 1.6.1
 
 ## Usage
+Download data 7.5GB, if you don't want to use the whole data you can skip this
 ```Bash
-# download data 7.5GB, if you don't want to use the whole data you can skip this
 make download
 ```
+Install required dependencies
 ```Bash
-# install required dependencies
 make install
 ```
-#### run `main.py` by using code editor (e.g., PyCharm, Visual Studio Code, etc.).
-#### or run `main.ipynb` by using code editor (e.g., DataSpell, Visual Studio Code, etc.).
+run `main.py` by using code editor (e.g., PyCharm, Visual Studio Code, etc.).
+or run `main.ipynb` by using code editor (e.g., DataSpell, Visual Studio Code, etc.).
 
 ## Description
 We need to write four functions to do some operation on a data set
