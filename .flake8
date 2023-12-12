@@ -28,4 +28,4 @@ exclude =
     old,
     build,
     dist
-max-line-length = 91
+max-line-length = 119

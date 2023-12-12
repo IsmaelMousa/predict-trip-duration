@@ -1,6 +1,5 @@
 import pandas as pd
 from scipy.stats import norm
-import matplotlib.pyplot as plt
 
 
 def compute_and_add_trip_duration(original_df: pd.DataFrame) -> pd.DataFrame:
@@ -69,7 +68,7 @@ def compute_predictions(original_df: pd.DataFrame) -> pd.DataFrame:
     """
 
     predictions = (original_df.groupby(by=['PULocationID', 'DOLocationID', 'hour_of_day', 'day_of_week'])
-                   .agg(mean_trip_duration=('trip_duration', 'mean'), margin_of_error=('trip_duration', 'sem')))
+                   .aggregate(mean_trip_duration=('trip_duration', 'mean'), margin_of_error=('trip_duration', 'sem')))
 
     z_score = norm.ppf(q=0.975)
 
@@ -106,6 +105,4 @@ def get_predictions(file_path: str) -> pd.DataFrame:
 
 
 if __name__ == '__main__':
-    file_path = '../data/sample.csv'
-
-    predictions = get_predictions(file_path)
+    pass
