@@ -6,10 +6,10 @@
 * [Technologies](#technologies)
 * [Usage](#usage)
 * [Description & Functions](#description)
-  * [1st Function](#1st-function)
-  * [2nd Function](#2nd-function)
-  * [3rd Function](#3rd-function)
-  * [4th Function](#4th-function)
+  * [1st Function](#compute-and-add-trip-duration)
+  * [2nd Function](#add-hour-of-day-and-day-of-week)
+  * [3rd Function](#compute-predictions)
+  * [4th Function](#get-predictions)
 * [Data Set used](#data-set-used-from-nyc-opendata-thank-you)
 
 ## General info

@@ -11,6 +11,8 @@ def compute_and_add_trip_duration(original_df: pd.DataFrame) -> pd.DataFrame:
 
     finally the result data frame is returned from the function.
 
+    Note: The values of trip duration will be rounded to the nearest two decimal values.
+
     :param original_df: original data frame
     :return: the original data frame with new column
     """
@@ -62,6 +64,8 @@ def compute_predictions(original_df: pd.DataFrame) -> pd.DataFrame:
     the mean is computed for all trip durations for the same:
     PULocationID / DOLocationID /day of week /hour of day.
     the new data frame is returned from the function.
+
+    Note: The values of trip duration will be rounded to the nearest two decimal values.
 
     :param original_df: original data frame
     :return: new data frame called predictions
