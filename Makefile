@@ -4,7 +4,7 @@ download:
 
 install | i:
 	@echo "installing dependencies..."
-	@poetry install
+	@poetry install --only main
 
 lint:
 	@echo "lint checking..."
