@@ -7,15 +7,21 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: setup potery
+    - name: Setup poetry
       uses: abatilo/actions-poetry@v2
     
     - name: Install dependencies
       run: make install
-      
+
+    - name: Install development dependencies
+      run: make idev
+
     - name: Run lint
       run: make lint
       
     - name: Run test
       run: make test
+
+    - name: Run coverage
+      run: make coverage
       
