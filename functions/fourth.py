@@ -30,7 +30,7 @@ def get_predictions(file_path: str) -> pd.DataFrame | str:
         return predictions
 
     except FileNotFoundError:
-        return f"in {__name__[10:]} function: No such file or directory called '{file_path}'!"
+        return f"in {__name__[10:]} function: No such file called '{file_path}'!"
 
     except Exception as e:
         return f"Unhandled exception! in {__name__[10:]} function: {e}!"
