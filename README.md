@@ -50,14 +50,13 @@ Run `main.ipynb` by using code editor (e.g., DataSpell, Visual Studio Code, etc.
 We need to write four functions to do some operation on a data set
 to generate a dataframe that is called predictions.
 
-Data Set that we
-used: [2019 High Volume FHV Trip Records](https://data.cityofnewyork.us/Transportation/2019-High-Volume-FHV-Trip-Records/4p5c-cbgn/data)
+[2019 High Volume FHV Trip Records](https://data.cityofnewyork.us/Transportation/2019-High-Volume-FHV-Trip-Records/4p5c-cbgn/data)
 
  hvfhs_license_num | dispatching_base_num | pickup_datetime         | dropoff_datetime        | PULocationID | DOLocationID | SR_Flag 
 -------------------|----------------------|-------------------------|-------------------------|--------------|--------------|---------
  HV0002            | B02914               | 2019 Feb 01 12:10:09 AM | 2019 Feb 01 12:31:04 AM | 161          | 33           |
  HV0005            | B02510               | 2019 Feb 01 12:59:55 AM | 2019 Feb 01 01:06:28 AM | 198          | 198          | 1       
-
+###
 ### [compute and add trip duration](functions/first.py)
 
 This function takes a dataframe and computes the trip duration by using the difference between
