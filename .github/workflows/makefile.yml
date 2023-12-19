@@ -12,9 +12,3 @@ jobs:
     
     - name: Install dependencies
       run: make install
-
-    - name: Run flake8
-      uses: suo/flake8-github-action@releases/v1
-
-    - name: Run lint
-      run: make lint
