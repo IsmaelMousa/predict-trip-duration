@@ -13,9 +13,6 @@ jobs:
     - name: Install dependencies
       run: make install
 
-    - name: Install development dependencies
-      run: make idev
-
     - name: Run lint
       run: make lint
       

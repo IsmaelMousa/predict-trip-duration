@@ -6,9 +6,6 @@ install:
 	@echo "installing dependencies..."
 	@poetry install --only main
 
-idev:
-	@echo "installing development dependencies..."
-	@poetry install --only dev
 lint:
 	@echo "lint checking..."
 	@flake8

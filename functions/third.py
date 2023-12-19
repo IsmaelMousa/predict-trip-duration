@@ -2,7 +2,7 @@ import pandas as pd
 from scipy.stats import norm
 
 
-def compute_predictions(original_df: pd.DataFrame) -> pd.DataFrame:
+def compute_predictions(original_df: pd.DataFrame) -> pd.DataFrame | str:
     """
     Computing a new data frame called predictions where the index is:
 
@@ -26,15 +26,25 @@ def compute_predictions(original_df: pd.DataFrame) -> pd.DataFrame:
     :return: new data frame called predictions
     """
 
-    predictions = (original_df.groupby(
-        by=['PULocationID', 'DOLocationID', 'hour_of_day', 'day_of_week'])
-                   .aggregate(mean_trip_duration=('trip_duration', 'mean'),
-                              margin_of_error=('trip_duration', 'sem')))
+    try:
+        predictions = (original_df.groupby(
+            by=['PULocationID', 'DOLocationID', 'hour_of_day', 'day_of_week'])
+                       .aggregate(mean_trip_duration=('trip_duration', 'mean'),
+                                  margin_of_error=('trip_duration', 'sem')))
 
-    z_score = norm.ppf(q=0.975)
+        z_score = norm.ppf(q=0.975)
 
-    standard_error = predictions.margin_of_error
+        standard_error = predictions.margin_of_error
 
-    predictions.margin_of_error = (z_score * standard_error).round(2)
+        predictions.margin_of_error = (z_score * standard_error).round(2)
 
-    return predictions
+        return predictions
+
+    except KeyError as e:
+        return f"in {__name__[10:]} function: {e} key is not found!"
+
+    except AttributeError as e:
+        return f"in {__name__[10:]} function: {e}!"
+
+    except Exception as e:
+        return f"Unhandled exception! in {__name__[10:]} function: {e}!"
