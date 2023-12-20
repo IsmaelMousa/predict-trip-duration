@@ -24,7 +24,7 @@ in the Data Science 2 course at An-Najah National University.
 ## Technologies
 
 - Python 3.11.2
-- Jupyter 1.0.0
+- Jupyter notebook 7.0.4
 - Poetry 1.6.1
 
 ## Usage
@@ -56,7 +56,7 @@ to generate a dataframe that is called predictions.
 -------------------|----------------------|-------------------------|-------------------------|--------------|--------------|---------
  HV0002            | B02914               | 2019 Feb 01 12:10:09 AM | 2019 Feb 01 12:31:04 AM | 161          | 33           |
  HV0005            | B02510               | 2019 Feb 01 12:59:55 AM | 2019 Feb 01 01:06:28 AM | 198          | 198          | 1       
-###
+ 
 ### [compute and add trip duration](functions/first.py)
 
 This function takes a dataframe and computes the trip duration by using the difference between
