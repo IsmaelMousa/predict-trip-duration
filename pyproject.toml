@@ -13,9 +13,7 @@ jupyter = "^1.0.0"
 
 
 [tool.poetry.group.dev.dependencies]
-nose2 = "^0.14.0"
 flake8 = "^6.1.0"
-coverage = "^7.3.3"
 
 [build-system]
 requires = ["poetry-core"]
