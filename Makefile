@@ -9,11 +9,3 @@ install:
 lint:
 	@echo "lint checking..."
 	@flake8
-
-test:
-	@echo "running test cases..."
-	@nose2 --config=nose2.cfg -v -F
-
-coverage:
-	@echo "running test coverage..."
-	@coverage report ./test/*_test.py
