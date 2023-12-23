@@ -1,3 +1,29 @@
+<p align="center">
+<a href="https://github.com/IsmaelMousa/predict-trip-duration/actions" alt="...">
+        <img src="https://img.shields.io/badge/Build-passing-green?logo=github" /></a>
+<a href="https://github.com/IsmaelMousa/predict-trip-duration/blob/main/main.ipynb" alt="...">
+        <img src="https://img.shields.io/badge/Jupyter_notebook-55.1%25-orange?logo=jupyter
+" /></a>
+    <a href="https://github.com/search?q=repo%3AIsmaelMousa%2Fpredict-trip-duration++language%3APython&type=code" alt="...">
+        <img src="https://img.shields.io/badge/Python-42.7%25-blue?logo=python
+" /></a>
+<a href="https://github.com/IsmaelMousa/predict-trip-duration/blob/main/pyproject.toml" alt="...">
+        <img src="https://img.shields.io/badge/Poetry-packaging-dark_green?logo=poetry
+" /></a>
+
+<a href="https://github.com/IsmaelMousa/predict-trip-duration/blob/main/Makefile" alt="...">
+        <img src="https://img.shields.io/badge/Makefile-build-blue" /></a>
+<a href="https://flake8.pycqa.org/en/latest/" alt="...">
+        <img src="https://img.shields.io/badge/Flake8-linter-purple?logo=flake8
+" /></a>
+<a href="https://pandas.pydata.org/" alt="...">
+        <img src="https://img.shields.io/badge/Pandas-data_manipulation-dark_green?logo=pandas
+" /></a>
+<a href="https://scipy.org/" alt="...">
+        <img src="https://img.shields.io/badge/Scipy-scientific_computing-dark_green?logo=scipy
+" /></a>
+</p>
+
 # Predict the trip duration
 
 ## Table of contents
@@ -56,7 +82,7 @@ to generate a dataframe that is called predictions.
 -------------------|----------------------|-------------------------|-------------------------|--------------|--------------|---------
  HV0002            | B02914               | 2019 Feb 01 12:10:09 AM | 2019 Feb 01 12:31:04 AM | 161          | 33           |
  HV0005            | B02510               | 2019 Feb 01 12:59:55 AM | 2019 Feb 01 01:06:28 AM | 198          | 198          | 1       
- 
+
 ### [compute and add trip duration](functions/first.py)
 
 This function takes a dataframe and computes the trip duration by using the difference between
