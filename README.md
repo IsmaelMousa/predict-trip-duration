@@ -11,10 +11,6 @@
         <img src="https://img.shields.io/badge/Makefile-build-purple" /></a>
 <a href="https://flake8.pycqa.org/en/latest/" alt="...">
         <img src="https://img.shields.io/badge/Flake8-linter-dark_green?logo=flake8" /></a>
-<a href="https://pandas.pydata.org/" alt="...">
-        <img src="https://img.shields.io/badge/Pandas-data_manipulation-dark_green?logo=pandas" /></a>
-<a href="https://scipy.org/" alt="...">
-        <img src="https://img.shields.io/badge/Scipy-scientific_computing-dark_green?logo=scipy" /></a>
 </p>
 
 # Predict the trip duration
