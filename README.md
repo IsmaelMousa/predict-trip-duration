@@ -1,14 +1,10 @@
-<p>
+<p align="center">
 <a href="https://github.com/IsmaelMousa/predict-trip-duration/actions" alt="...">
-        <img src="https://img.shields.io/badge/Build-passing-green?logo=github" /></a>
-<a href="https://github.com/IsmaelMousa/predict-trip-duration/blob/main/main.ipynb" alt="...">
-        <img src="https://img.shields.io/badge/Jupyter-55.1%25-orange?logo=jupyter" /></a>
-<a href="https://github.com/search?q=repo%3AIsmaelMousa%2Fpredict-trip-duration++language%3APython&type=code" alt="...">
-        <img src="https://img.shields.io/badge/Python-42.7%25-blue?logo=python" /></a>
+        <img src="https://img.shields.io/badge/Build-passing-dark_green?logo=github" /></a>
 <a href="https://github.com/IsmaelMousa/predict-trip-duration/blob/main/pyproject.toml" alt="...">
         <img src="https://img.shields.io/badge/Poetry-packaging-dark_green?logo=poetry" /></a>
 <a href="https://github.com/IsmaelMousa/predict-trip-duration/blob/main/Makefile" alt="...">
-        <img src="https://img.shields.io/badge/Makefile-build-purple" /></a>
+        <img src="https://img.shields.io/badge/Makefile-build-blue" /></a>
 <a href="https://flake8.pycqa.org/en/latest/" alt="...">
         <img src="https://img.shields.io/badge/Flake8-linter-dark_green?logo=flake8" /></a>
 </p>
