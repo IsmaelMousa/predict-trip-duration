@@ -8,9 +8,9 @@
 <a href="https://github.com/IsmaelMousa/predict-trip-duration/blob/main/pyproject.toml" alt="...">
         <img src="https://img.shields.io/badge/Poetry-packaging-dark_green?logo=poetry" /></a>
 <a href="https://github.com/IsmaelMousa/predict-trip-duration/blob/main/Makefile" alt="...">
-        <img src="https://img.shields.io/badge/Makefile-build-blue" /></a>
+        <img src="https://img.shields.io/badge/Makefile-build-purple" /></a>
 <a href="https://flake8.pycqa.org/en/latest/" alt="...">
-        <img src="https://img.shields.io/badge/Flake8-linter-purple?logo=flake8" /></a>
+        <img src="https://img.shields.io/badge/Flake8-linter-dark_green?logo=flake8" /></a>
 <a href="https://pandas.pydata.org/" alt="...">
         <img src="https://img.shields.io/badge/Pandas-data_manipulation-dark_green?logo=pandas" /></a>
 <a href="https://scipy.org/" alt="...">
