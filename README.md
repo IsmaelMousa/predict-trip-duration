@@ -2,7 +2,7 @@
 <a href="https://github.com/IsmaelMousa/predict-trip-duration/actions" alt="...">
         <img src="https://img.shields.io/badge/Build-passing-green?logo=github" /></a>
 <a href="https://github.com/IsmaelMousa/predict-trip-duration/blob/main/main.ipynb" alt="...">
-        <img src="https://img.shields.io/badge/Jupyter_notebook-55.1%25-orange?logo=jupyter" /></a>
+        <img src="https://img.shields.io/badge/Jupyter-55.1%25-orange?logo=jupyter" /></a>
 <a href="https://github.com/search?q=repo%3AIsmaelMousa%2Fpredict-trip-duration++language%3APython&type=code" alt="...">
         <img src="https://img.shields.io/badge/Python-42.7%25-blue?logo=python" /></a>
 <a href="https://github.com/IsmaelMousa/predict-trip-duration/blob/main/pyproject.toml" alt="...">
@@ -43,7 +43,7 @@ in the Data Science 2 course at An-Najah National University.
 ## Technologies
 
 - Python 3.11.2
-- Jupyter notebook 7.0.4
+- Jupyter 1.0.0
 - Poetry 1.6.1
 
 ## Usage
