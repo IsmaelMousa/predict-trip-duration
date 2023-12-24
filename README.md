@@ -25,12 +25,8 @@
 
 ## General info
 
-Practice inferential statistics using python,
+Applying the statistical analysis using python,
 We would like to predict trip duration from a location to another using a taxi.
-
-The idea for this project was proposed
-by [Dr.Ayser Armiti](https://www.linkedin.com/in/ayserarmiti?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
-in the Data Science 2 course at An-Najah National University.
 
 ## Technologies
 
@@ -59,7 +55,7 @@ Run `main.ipynb` by using code editor (e.g., DataSpell, Visual Studio Code, etc.
 ## Description
 
 We need to write four functions to do some operation on a data set
-to generate a dataframe that is called predictions.
+to generate a dataframe that called predictions, and these predictions is all about the mean value of the trip duration according of some conditions such as the location, time, and so on.
 
 [2019 High Volume FHV Trip Records](https://data.cityofnewyork.us/Transportation/2019-High-Volume-FHV-Trip-Records/4p5c-cbgn/data)
 
