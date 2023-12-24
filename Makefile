@@ -1,6 +1,6 @@
 download:
 	@echo "downloading data..."
-	@echo curl https://data.cityofnewyork.us/api/views/4p5c-cbgn/rows.csv?accessType=DOWNLOAD --output data/data.csv
+	@curl https://data.cityofnewyork.us/api/views/4p5c-cbgn/rows.csv?accessType=DOWNLOAD --output data/data.csv
 
 install:
 	@echo "installing dependencies..."
