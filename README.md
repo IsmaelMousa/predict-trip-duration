@@ -1,13 +1,12 @@
 <p align="center">
-<a href="https://github.com/IsmaelMousa/predict-trip-duration/actions" alt="...">
-        <img src="https://img.shields.io/badge/Build-passing-dark_green?logo=github" /></a>
+<a href="https://github.com/IsmaelMousa/predict-trip-duration/actions/workflows/makefile.yml" alt="...">
+        <img src="https://img.shields.io/badge/Makefile_CI-passing-dark_green?logo=github" /></a>
 <a href="https://github.com/IsmaelMousa/predict-trip-duration/blob/main/pyproject.toml" alt="...">
         <img src="https://img.shields.io/badge/Poetry-packaging-dark_green?logo=poetry" /></a>
 <a href="https://github.com/IsmaelMousa/predict-trip-duration/blob/main/Makefile" alt="...">
-        <img src="https://img.shields.io/badge/Makefile-build-blue" /></a>
+        <img src="https://img.shields.io/badge/Makefile-building-blue" /></a>
 <a href="https://flake8.pycqa.org/en/latest/" alt="...">
         <img src="https://img.shields.io/badge/Flake8-linter-dark_green?logo=flake8" /></a>
-</p>
 
 # Predict the trip duration
 
@@ -55,7 +54,8 @@ Run `main.ipynb` by using code editor (e.g., DataSpell, Visual Studio Code, etc.
 ## Description
 
 We need to write four functions to do some operation on a data set
-to generate a dataframe that called predictions, and these predictions is all about the mean value of the trip duration according of some conditions such as the location, time, and so on.
+to generate a dataframe that called predictions, and these predictions is all about the mean value of the trip duration
+according of some conditions such as the location, time, and so on.
 
 [2019 High Volume FHV Trip Records](https://data.cityofnewyork.us/Transportation/2019-High-Volume-FHV-Trip-Records/4p5c-cbgn/data)
 
