@@ -11,4 +11,7 @@ jobs:
       uses: abatilo/actions-poetry@v2
     
     - name: Install dependencies
-      run: make install
+      run: poetry run make install
+
+    - name: Linter
+      run: poetry run make lint
